@@ -55,6 +55,15 @@ const Navbar = () => {
           </li>
           <li>
             <Link
+              to="/blog"
+              title="Blog"
+              className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+            >
+              Blog
+            </Link>
+          </li>
+          <li>
+            <Link
               to="/faq"
               title="FAQ"
               className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"

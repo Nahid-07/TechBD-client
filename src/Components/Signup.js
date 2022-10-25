@@ -4,7 +4,8 @@ import { Link } from "react-router-dom";
 const Signup = () => {
   return (
     <div className="container mx-auto">
-      <div className="mx-2 md:w-1/2 md:mx-auto border-2 border-fuchsia-600 p-8 rounded-md shadow-lg mt-24">
+      <div className="mx-2 md:w-[30%] md:mx-auto border-2 border-fuchsia-600 p-8 rounded-md shadow-lg mt-24">
+      <h1 className="text-5xl font-semibold text-center my-5">Please Sign up</h1>
         <div className="mb-4">
           <label className="block"> Your full name</label>
           <input
@@ -21,7 +22,7 @@ const Signup = () => {
             className="input input-bordered input-secondary w-full "
           />
         </div>
-        <div>
+        <div className="mt-4">
           <label className="block">Password</label>
           <input
             type="Password"

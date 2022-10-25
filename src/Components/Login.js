@@ -6,9 +6,10 @@ const Login = () => {
   return (
     <div className="container mx-auto flex justify-around items-center mt-24">
       <div className="hidden md:block">
-        <img src={Layer} alt="" width="400px" />
+        <img src={Layer} alt="" width="600px" />
       </div>
       <div className="border p-8 rounded">
+      <h1 className="text-5xl text-pink-500 font-semibold text-center my-5">Please Log in</h1>
         <div className="mb-4">
         <label htmlFor=""> Your email</label>
         <input type="text" placeholder="Type here" className="input input-bordered input-secondary w-full max-w-xs" />
