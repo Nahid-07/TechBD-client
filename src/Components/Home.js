@@ -13,7 +13,7 @@ const Home = () => {
           <p className="mb-5 text-lg font-medium">
           The world has come a long way now. The world has become dependent on technology. Now is the best time to reinvent yourself. So what are you waiting for? Join us today
           </p>
-          <button className="btn btn-primary">Get Started</button>
+          <button className="btn btn-secondary">Get Started</button>
         </div>
       </div>
     </div>
