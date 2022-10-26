@@ -55,13 +55,13 @@ const Login = () => {
           <div>
             <button className="btn btn-secondary w-full mt-5">Log in</button>
           </div>
-          <div className="flex justify-between">
+          <div>
             <p>
               <small>do you have any account ?</small>
             </p>
             <p>{error}</p>
             <Link to="/signup">
-              <small>Signup</small>
+              <button className="bg-slate-800 w-full text-white text-lg py-4 rounded">Sign up</button>
             </Link>
           </div>
         </form>
