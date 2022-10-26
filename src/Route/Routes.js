@@ -6,6 +6,7 @@ import Login from "../Components/Login";
 import Signup from "../Components/Signup";
 import Layout from "../Layout/Layout";
 import ErrorPage from '../Components/ErrorPage'
+import CourseCategory from "../Components/CourseCategory";
 
 export const router = createBrowserRouter([
     {
@@ -25,6 +26,9 @@ export const router = createBrowserRouter([
             {
                 path:'/faq', element:<Faq></Faq>
             },
+            {
+                path:'/course', element:<CourseCategory></CourseCategory>
+            }
         ]
     }
 ])

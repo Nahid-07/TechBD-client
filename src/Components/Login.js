@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import Layer from "../assests/Layer.png";
 import { Authprovider } from "../Context/Context";
+import Swal from 'sweetalert2'
 
 const Login = () => {
   const [error, setError] = useState(null);
@@ -17,7 +18,10 @@ const Login = () => {
 
     LogIn(email, password)
       .then(result => {
-        const user = result.user
+        const user = result.user;
+        Swal.fire(
+          'Successfully logged in!',
+        )
         console.log(user)
       })
   };
