@@ -1,7 +1,7 @@
 import React from "react";
 import { useContext } from "react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Layer from "../assests/Layer.png";
 import { Authprovider } from "../Context/Context";
 import Swal from 'sweetalert2'
@@ -9,6 +9,10 @@ import Swal from 'sweetalert2'
 const Login = () => {
   const [error, setError] = useState(null);
   const { LogIn } = useContext(Authprovider);
+  let location = useLocation()
+  
+  let from = location.state?.from?.pathname || "/";
+  const navigate = useNavigate()
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -17,13 +21,9 @@ const Login = () => {
     const password = form.password.value;
 
     LogIn(email, password)
-      .then(result => {
-        const user = result.user;
-        Swal.fire(
-          'Successfully logged in!',
-        )
-        console.log(user)
-      })
+      .then(() => {
+        navigate(from, { replace: true })
+      }).catch(error=> console.log(error))
   };
   return (
     <div className="container mx-auto flex justify-around items-center mt-24">

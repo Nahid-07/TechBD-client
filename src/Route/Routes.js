@@ -9,6 +9,7 @@ import ErrorPage from '../Components/ErrorPage'
 import CourseCategory from "../Components/CourseCategory";
 import Details from "../Components/Details";
 import CheckOut from "../Components/CheckOut";
+import PrivetRout from "../privetRouter/PrivetRout";
 
 export const router = createBrowserRouter([
     {
@@ -36,7 +37,8 @@ export const router = createBrowserRouter([
                 loader: ({params}) => fetch(`https://assignment-10-api-server.vercel.app/courses/${params.id}`)
             },
             {
-                path: '/checkout', element:<CheckOut></CheckOut>
+                path: '/checkout', element:<PrivetRout><CheckOut></CheckOut></PrivetRout>,
+                loader:()=> fetch('https://assignment-10-api-server.vercel.app/courses')
             }
         ]
     }

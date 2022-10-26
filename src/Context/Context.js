@@ -16,9 +16,11 @@ export const Authprovider = createContext();
 const auth = getAuth(app);
 const Context = ({ children }) => {
   const [user, setUser] = useState(null);
+  const [loading , setLoading] = useState(true)
   // create user with email and password
 
   const createUser = (email, password) => {
+    setLoading(true)
     return createUserWithEmailAndPassword(auth, email, password);
   };
   // Update profile
@@ -32,28 +34,33 @@ const Context = ({ children }) => {
   // log out
 
   const LogOut = () => {
+    setLoading(true)
     return signOut(auth);
   };
   // Sign in
 
   const LogIn = (email, password) => {
+    setLoading(true)
     return signInWithEmailAndPassword(auth, email, password);
   };
   // google log in
   const googleLogIn = (provider) => {
+    setLoading(true)
     return signInWithPopup(auth, provider);
   };
 // githib login
   const githubLogin =(provider)=>{
+    setLoading(true)
     signInWithPopup(auth,provider)
   }
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
+      setLoading(false)
     });
     return () => unsubscribe();
   }, []);
-  const authInfo = { LogOut, createUser, profile, user, LogIn, googleLogIn , githubLogin};
+  const authInfo = { LogOut,loading, createUser, profile, user, LogIn, googleLogIn , githubLogin};
   return (
     <div>
       <Authprovider.Provider value={authInfo}>{children}</Authprovider.Provider>
