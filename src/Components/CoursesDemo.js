@@ -1,9 +1,10 @@
 import React from "react";
 import { FaStar } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const CoursesDemo = ({ demo }) => {
-  console.log(demo);
-  const {thumbnail_url,title,published_date,author_name } =demo
+//   console.log(demo);
+  const {thumbnail_url,title,published_date,author_name,id } =demo
   return (
     <div className="card w-96 bg-base-100 shadow-xl">
       <figure>
@@ -15,7 +16,7 @@ const CoursesDemo = ({ demo }) => {
         <p>Publish date :{published_date}</p>
         <div className="card-actions justify-between items-center">
             <p className="flex text-yellow-400"><FaStar /><FaStar /> <FaStar /> <FaStar /></p>
-          <button className="btn btn-secondary">See more !</button>
+          <Link to={`/details/${id}`}><button className="btn btn-secondary">See more !</button></Link>
         </div>
       </div>
     </div>
