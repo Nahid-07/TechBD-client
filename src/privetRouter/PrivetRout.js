@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Navigate, useLoaderData, useLocation } from 'react-router-dom';
+import { Navigate, useLocation } from 'react-router-dom';
 import { Authprovider } from '../Context/Context';
 
 const PrivetRout = ({children}) => {

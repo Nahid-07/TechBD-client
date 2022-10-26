@@ -22,7 +22,7 @@ const CourseCategory = () => {
                     category.map(c => <Category key={c.id} category={c}></Category>)
                 }
             </div>
-            <div className='col-span-10'>
+            <div className='col-span-10 items-center'>
                 <div className='grid grid-cols-3 gap-4'>
                 {
                     category.map(c => <CoursesDemo key={c.id} demo={c}></CoursesDemo>)

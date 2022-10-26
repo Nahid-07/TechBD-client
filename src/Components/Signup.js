@@ -9,7 +9,7 @@ const Signup = () => {
   const provider = new GoogleAuthProvider();
   const gitProvider = new GithubAuthProvider()
   const {createUser,profile,googleLogIn,githubLogin} = useContext(Authprovider)
-  const [error,setError] = useState();
+  const [error,setError] = useState(null);
   const handleSubmit = (e)=>{
     e.preventDefault()
     const form = e.target;
@@ -17,17 +17,20 @@ const Signup = () => {
     const photoURL = form.photoURL.value;
     const email = form.email.value;
     const password = form.password.value;
+    const confirm = form.confirm.value;
 
     if(password.length < 6){
       return
     }
+    if(password !== confirm){
+      setError('Your password did not match')
+    }else(setError(''))
     createUser(email,password)
-    .then((result)=>{
-      const user = result.user;
+    .then(()=>{
       profile(name,photoURL)
-      console.log(user)
-    }).catch(err => console.log(err.messege))
+    }).catch(error => setError(error.message))
   }
+  
   const handleGoogle = ()=>{
     googleLogIn(provider).then(()=>{}).catch(err=>{
       console.log(err.messege);
@@ -38,7 +41,7 @@ const Signup = () => {
   }
   return (
     <div className="container mx-auto">
-      <div className="mx-2 md:w-[30%] md:mx-auto border-2 border-fuchsia-600 p-8 rounded-md shadow-lg mt-24">
+      <div className="mx-2 md:w-[30%] md:mx-auto border-2 border-fuchsia-600 p-8 rounded-md shadow-lg mt-5">
       <h1 className="text-5xl font-semibold text-center my-5">Please Sign up</h1>
         <form onSubmit={handleSubmit}>
         <div className="mb-4">
@@ -72,6 +75,15 @@ const Signup = () => {
           <label className="block">Password</label>
           <input
             type="Password"
+            name="confirm"
+            placeholder="Type here"
+            className="input input-bordered input-secondary w-full "
+          />
+        </div>
+        <div className="mt-4">
+          <label className="block">Password</label>
+          <input
+            type="Password"
             name="password"
             placeholder="Type here"
             className="input input-bordered input-secondary w-full "
@@ -79,8 +91,9 @@ const Signup = () => {
         </div>
         <div className="flex justify-between">
             <p><small>Allready have an account ?</small></p>
-            <Link to='/login'>Login</Link>
+            <Link className="text-primary" to='/login'>Login</Link>
         </div>
+        <p className="text-red-800 my-2">{error}</p>
         <div>
           <button className="btn btn-secondary w-full mt-5">Sign Up</button>
         </div>

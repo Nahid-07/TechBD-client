@@ -22,8 +22,13 @@ const Login = () => {
 
     LogIn(email, password)
       .then(() => {
+        Swal.fire(
+          'Good job!',
+          'Successfully logged in!',
+          'success'
+        )
         navigate(from, { replace: true })
-      }).catch(error=> console.log(error))
+      }).catch(error=> setError(error.message))
   };
   return (
     <div className="container mx-auto flex justify-around items-center mt-24">
@@ -63,7 +68,7 @@ const Login = () => {
             <p>
               <small>do you have any account ?</small>
             </p>
-            <p>{error}</p>
+            <p className="text-red-800 my-3">{error}</p>
             <Link to="/signup">
               <button className="bg-slate-800 w-full text-white text-lg py-4 rounded">Sign up</button>
             </Link>
