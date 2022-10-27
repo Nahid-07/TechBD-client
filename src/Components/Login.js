@@ -31,7 +31,7 @@ const Login = () => {
       }).catch(error=> setError(error.message))
   };
   return (
-    <div className="container mx-auto flex justify-around items-center mt-24">
+    <div className="container mx-auto flex justify-around items-center mt-24" data-aos="zoom-out-left" data-aos-duration="1000">
       <div className="hidden md:block">
         <img src={Layer} alt="" width="600px" />
       </div>

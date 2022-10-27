@@ -20,7 +20,7 @@ const Details = () => {
   const { details, thumbnail_url, title, rating,price } = detail;
   const ref =useRef()
   return (
-    <div className="container mx-auto my-5">
+    <div className="container mx-auto my-5"  data-aos="flip-left">
       <ReactToPrint trigger={()=> <button className="bg-emerald-600 px-8 py-3 text-white font-medium text-xl mb-5">Download pdf</button>} content={()=> ref.current}>
 
       </ReactToPrint>

@@ -51,7 +51,7 @@ const Signup = () => {
     githubLogin(gitProvider).then(()=>{})
   }
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto" data-aos="zoom-out-left" data-aos-duration="1000">
       <div className="mx-2 md:w-[30%] md:mx-auto border-2 border-fuchsia-600 p-8 rounded-md shadow-lg mt-5">
       <h1 className="text-5xl font-semibold text-center my-5">Please Sign up</h1>
         <form onSubmit={handleSubmit}>

@@ -11,6 +11,7 @@
 * Sweet alert 2
 * react icon
 * firebase auth
+* React Aos
 
 ## Project details
 

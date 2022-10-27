@@ -2,7 +2,7 @@ import React from "react";
 
 const Faq = () => {
   return (
-    <div className="container mx-auto mt-20">
+    <div className="container mx-auto mt-20" data-aos="fade-up" data-aos-duration="2000">
       <div className="collapse my-10">
         <input type="checkbox" className="peer" />
         <div className="collapse-title bg-emerald-500 text-primary-content peer-checked:bg-emerald-500 peer-checked:text-secondary-content">
