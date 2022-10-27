@@ -10,14 +10,14 @@ import Footer from "./Footer";
 const Details = () => {
   const detail = useLoaderData();
   const {user} = useContext(Authprovider)
-  console.log(user)
+  // console.log(user)
   const navigate = useNavigate()
   const handleSecure = ()=>{
     if(!user?.uid){
       navigate('/login')
     }
   }
-  const { details, thumbnail_url, title, rating } = detail;
+  const { details, thumbnail_url, title, rating,price } = detail;
   const ref =useRef()
   return (
     <div className="container mx-auto my-5">
@@ -32,8 +32,9 @@ const Details = () => {
         <div className="card-body">
           <h2 className="card-title">{title}</h2>
           <p>{details}</p>
-          <div className="card-actions justify-between items-center">
+          <div className="card-actions justify-around items-center">
             <span>{rating.number}</span><p className="flex text-yellow-400"><FaStar /><FaStar /> <FaStar /> <FaStar /></p>
+          <p className="text-orange-500 text-3xl">Price : {price}</p>
           <Link to='/checkout'><button onClick={handleSecure} className="btn bg-emerald-700">Purchase now </button></Link>
         </div>
         </div>

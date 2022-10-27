@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const CoursesDemo = ({ demo }) => {
 //   console.log(demo);
-  const {thumbnail_url,title,published_date,author_name,id } =demo
+  const {thumbnail_url,title,published_date,author_name,id } =demo;
   return (
     <div className="card w-80 mx-auto bg-base-100 shadow-xl mb-4">
       <figure>
@@ -16,7 +16,7 @@ const CoursesDemo = ({ demo }) => {
         <p>Publish date :{published_date}</p>
         <div className="card-actions justify-between items-center">
             <p className="flex text-yellow-400"><FaStar /><FaStar /> <FaStar /> <FaStar /></p>
-          <Link to={`/details/${id}`}><button className="btn bg-emerald-700">See more !</button></Link>
+          <Link to={`/details/${id}`}><button className="btn bg-emerald-700">View details</button></Link>
         </div>
       </div>
     </div>

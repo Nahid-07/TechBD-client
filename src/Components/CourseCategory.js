@@ -12,7 +12,7 @@ const CourseCategory = () => {
         .then(res => res.json())
         .then(data => setCategory(data))
     },[])
-    console.log(category)
+    // console.log(category)
     return (
         <div>
             <div className='container mx-auto lg:grid grid-cols-12 mt-10 gap-4'>
