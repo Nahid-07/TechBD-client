@@ -36,7 +36,7 @@ const Login = () => {
         <img src={Layer} alt="" width="600px" />
       </div>
       <div className="border p-8 rounded">
-        <h1 className="text-5xl text-pink-500 font-semibold text-center my-5">
+        <h1 className="text-5xl text-emerald-600 font-semibold text-center my-5">
           Please Log in
         </h1>
         <form onSubmit={handleSubmit}>
@@ -46,7 +46,7 @@ const Login = () => {
               type="email"
               name="email"
               placeholder="Type here"
-              className="input input-bordered input-secondary w-full max-w-xs"
+              className="input input-bordered w-full max-w-xs"
             />
           </div>
           <div>

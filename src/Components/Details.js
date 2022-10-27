@@ -1,10 +1,11 @@
 import React from "react";
-import { Link, Navigate, useLoaderData, useNavigate } from "react-router-dom";
+import { Link, useLoaderData, useNavigate } from "react-router-dom";
 import { FaStar } from "react-icons/fa";
 import ReactToPrint from "react-to-print";
 import { useRef } from "react";
 import { useContext } from "react";
 import { Authprovider } from "../Context/Context";
+import Footer from "./Footer";
 
 const Details = () => {
   const detail = useLoaderData();
@@ -37,6 +38,7 @@ const Details = () => {
         </div>
         </div>
       </div>
+      <Footer></Footer>
     </div>
   );
 };
