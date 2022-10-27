@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useContext } from "react";
+import { FaMedapps } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { Authprovider } from "../Context/Context";
 
@@ -10,14 +11,16 @@ const Navbar = () => {
     <div className="bg-emerald-700">
       <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
         <div className="relative flex items-center justify-between">
+          
           <Link
             to="/"
             aria-label="Smart Home"
             title="Smart Home"
             className="inline-flex items-center"
           >
+            <FaMedapps className="text-white text-3xl"/>
             <span className="ml-2 text-xl font-bold tracking-wide text-white uppercase">
-              CodersDream
+              TechBD
             </span>
           </Link>
           <ul className="flex items-center hidden space-x-8 lg:flex">
@@ -146,8 +149,9 @@ const Navbar = () => {
                         title="Company"
                         className="inline-flex items-center"
                       >
+                        <FaMedapps className="text-white text-3xl"/>
                         <span className="ml-2 text-xl font-bold tracking-wide text-white uppercase">
-                          CodersDream
+                          TechBD
                         </span>
                       </Link>
                     </div>
@@ -180,7 +184,7 @@ const Navbar = () => {
                       </li>
                       {user?.email ? (
                         <button
-                          className="bg-pink-400 text-white px-5 py-2 rounded shadow-md"
+                          className="bg-emerald-400 text-white px-5 py-2 rounded shadow-md"
                           onClick={LogOut}
                         >
                           Log Out

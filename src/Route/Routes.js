@@ -38,8 +38,7 @@ export const router = createBrowserRouter([
                 loader: ({params}) => fetch(`https://assignment-10-api-server.vercel.app/courses/${params.id}`)
             },
             {
-                path: '/checkout', element:<PrivetRout><CheckOut></CheckOut></PrivetRout>,
-                loader:()=> fetch('https://assignment-10-api-server.vercel.app/courses')
+                path: '/checkout', element:<PrivetRout><CheckOut></CheckOut></PrivetRout>
             },
             {
                 path:'profile',element:<Profile></Profile>
