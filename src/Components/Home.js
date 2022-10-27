@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import hero2 from "../assests/hero2.jpg";
 import Footer from "./Footer";
 const Home = () => {
@@ -10,7 +11,7 @@ const Home = () => {
     <div>
       <h1 className="mb-5 text-4xl font-bold">If you want to achieve greatness stop asking for permission</h1>
       <p className="mb-5 text-xl">The world has become a log way now.The world jas become dependent on technology.Now is the best time to reivent your skill.so what are you waiting for?Join us today!! </p>
-      <button className="btn bg-emerald-600">Get Started</button>
+      <Link to='/course'><button className="btn bg-emerald-600">Get Started</button></Link>
     </div>
   </div>
 </div>

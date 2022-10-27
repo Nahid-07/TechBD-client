@@ -99,12 +99,14 @@ const Navbar = () => {
             </li>
             {user && user?.uid ? (
               <>
+                <Link to='/profile'>
                 <img
                   src={user?.photoURL}
                   className="w-[60px] rounded-full cursor-pointer"
                   title={user.displayName}
                   alt="userIMG"
                 />
+                </Link>
                 <p className="text-white font-medium">{user?.displayName}</p>
               </>
             ) : (
