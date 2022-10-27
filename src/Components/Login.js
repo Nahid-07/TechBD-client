@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Layer from "../assests/Layer.png";
 import { Authprovider } from "../Context/Context";
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
 
 const Login = () => {
   const [error, setError] = useState(null);
@@ -55,14 +55,14 @@ const Login = () => {
               type="password"
               name="password"
               placeholder="Type here"
-              className="input input-bordered input-secondary w-full max-w-xs"
+              className="input input-bordered w-full max-w-xs"
             />
           </div>
           <p>
-            <small>Forget password ?</small>
+            <Link><small>Forget password ?</small></Link>
           </p>
           <div>
-            <button className="btn btn-secondary w-full mt-5">Log in</button>
+            <button className="btn bg-emerald-700 w-full mt-5">Log in</button>
           </div>
           <div>
             <p>

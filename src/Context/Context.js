@@ -4,6 +4,7 @@ import {
   createUserWithEmailAndPassword,
   getAuth,
   onAuthStateChanged,
+  sendEmailVerification,
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
@@ -53,6 +54,10 @@ const Context = ({ children }) => {
     setLoading(true)
     signInWithPopup(auth,provider)
   }
+// varifcation eamil
+  const verify = ()=>{
+    return sendEmailVerification(auth.currentUser)
+  }
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
@@ -60,7 +65,7 @@ const Context = ({ children }) => {
     });
     return () => unsubscribe();
   }, []);
-  const authInfo = { LogOut,loading, createUser, profile, user, LogIn, googleLogIn , githubLogin};
+  const authInfo = { LogOut,verify,loading, createUser, profile, user, LogIn, googleLogIn , githubLogin};
   return (
     <div>
       <Authprovider.Provider value={authInfo}>{children}</Authprovider.Provider>

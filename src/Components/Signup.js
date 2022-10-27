@@ -2,13 +2,15 @@ import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
 import React from "react";
 import { useContext } from "react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Authprovider } from "../Context/Context";
+import Swal from 'sweetalert2';
 
 const Signup = () => {
   const provider = new GoogleAuthProvider();
   const gitProvider = new GithubAuthProvider()
-  const {createUser,profile,googleLogIn,githubLogin} = useContext(Authprovider)
+  const {createUser,profile,googleLogIn,githubLogin,verify} = useContext(Authprovider);
+  const navigate = useNavigate()
   const [error,setError] = useState(null);
   const handleSubmit = (e)=>{
     e.preventDefault()
@@ -25,8 +27,17 @@ const Signup = () => {
     if(password !== confirm){
       setError('Your password did not match')
     }else(setError(''))
+
     createUser(email,password)
     .then(()=>{
+      verify().then(()=>{
+        Swal.fire(
+          'Verify!',
+          'A verification email has been sent to your account',
+          'please verify!!'
+        )
+      })
+      navigate('/course')
       profile(name,photoURL)
     }).catch(error => setError(error.message))
   }
@@ -95,11 +106,11 @@ const Signup = () => {
         </div>
         <p className="text-red-800 my-2">{error}</p>
         <div>
-          <button className="btn btn-secondary w-full mt-5">Sign Up</button>
+          <button className="btn bg-emerald-700 w-full mt-5">Sign Up</button>
         </div>
         <div>
-          <button onClick={handleGoogle} className="btn w-full mt-5">Google</button>
-          <button onClick={handleGithub} className="btn w-full mt-5">Github</button>
+          <button onClick={handleGoogle} className="btn w-full mt-5">Sign in with Google</button>
+          <button onClick={handleGithub} className="btn w-full mt-5">Sign in with Github</button>
         </div>
         </form>
       </div>

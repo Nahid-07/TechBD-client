@@ -16,7 +16,7 @@ const CoursesDemo = ({ demo }) => {
         <p>Publish date :{published_date}</p>
         <div className="card-actions justify-between items-center">
             <p className="flex text-yellow-400"><FaStar /><FaStar /> <FaStar /> <FaStar /></p>
-          <Link to={`/details/${id}`}><button className="btn btn-secondary">See more !</button></Link>
+          <Link to={`/details/${id}`}><button className="btn bg-emerald-700">See more !</button></Link>
         </div>
       </div>
     </div>
