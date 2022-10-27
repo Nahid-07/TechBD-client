@@ -11,19 +11,16 @@ const CourseCategory = () => {
         .then(res => res.json())
         .then(data => setCategory(data))
     },[])
-    useEffect(()=>{
-        fetch()
-    },[])
     console.log(category)
     return (
-        <div className='container mx-auto grid grid-cols-12 mt-10 gap-4'>
-            <div className="md:col-span-2 bg-emerald-700 mx-2">
+        <div className='container mx-auto lg:grid grid-cols-12 mt-10 gap-4'>
+            <div className="md:col-span-2 bg-emerald-700 mx-2 mb-5">
                 {
                     category.map(c => <Category key={c.id} category={c}></Category>)
                 }
             </div>
-            <div className='col-span-10 items-center'>
-                <div className='grid grid-cols-3 gap-4'>
+            <div className='col-span-10'>
+                <div className='md:grid md:grid-cols-2 lg:grid-cols-3'>
                 {
                     category.map(c => <CoursesDemo key={c.id} demo={c}></CoursesDemo>)
                 }

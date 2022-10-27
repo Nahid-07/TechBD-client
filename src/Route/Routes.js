@@ -39,7 +39,7 @@ export const router = createBrowserRouter([
             {
                 path: '/checkout', element:<PrivetRout><CheckOut></CheckOut></PrivetRout>,
                 loader:()=> fetch('https://assignment-10-api-server.vercel.app/courses')
-            }
+            },
         ]
     }
 ])

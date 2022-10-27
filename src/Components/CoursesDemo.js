@@ -6,7 +6,7 @@ const CoursesDemo = ({ demo }) => {
 //   console.log(demo);
   const {thumbnail_url,title,published_date,author_name,id } =demo
   return (
-    <div className="card w-96 bg-base-100 shadow-xl mb-4">
+    <div className="card w-80 mx-auto bg-base-100 shadow-xl mb-4">
       <figure>
         <img src={thumbnail_url} alt="Shoes" />
       </figure>

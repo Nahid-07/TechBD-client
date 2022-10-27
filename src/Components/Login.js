@@ -11,7 +11,7 @@ const Login = () => {
   const { LogIn } = useContext(Authprovider);
   let location = useLocation()
   
-  let from = location.state?.from?.pathname || "/";
+  let from = location.state?.from?.pathname || "/course";
   const navigate = useNavigate()
 
   const handleSubmit = (e) => {
