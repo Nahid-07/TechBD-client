@@ -15,7 +15,7 @@ const Home = () => {
     </div>
   </div>
 </div>
-    <div className="md:grid md:grid-cols-2 lg:grid-cols-3 mx-2 md:mx-16 gap-6 my-10 text-center text-lg font-medium text-white " data-aos="flip-up">
+    <div className="md:grid md:grid-cols-2 lg:grid-cols-3 mx-2 md:mx-16 gap-6 my-10 text-center text-lg font-medium text-white " data-aos="zoom-in-down" data-aos-duration="500">
       <div className="bg-emerald-600 px-5 py-10 rounded">
       Once upon a time, the world of computer programming was a mysterious and exclusive place. Only a select handful of people were considered computer programmers with cutting-edge coding skills. Today, many IT jobs require a solid grasp of the top programming languages, and yes, we mean more than one.If your plans to advance your career or change careers completely requires you to master a programming language, you might wonder which one to learn. After all, it will take time and money to learn the language, so you want to make the right choice.
       </div>
