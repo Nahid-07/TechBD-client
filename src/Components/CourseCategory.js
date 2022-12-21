@@ -16,7 +16,7 @@ const CourseCategory = () => {
     return (
         <div>
             <div className='container mx-auto lg:grid grid-cols-12 mt-10 gap-4'>
-            <div className="md:col-span-2 bg-emerald-700 mx-2 mb-5" data-aos="zoom-out-left" data-aos-duration="1500">
+            <div className="md:col-span-2 bg-slate-400 mx-2 mb-5" data-aos="zoom-out-left" data-aos-duration="1500">
                 {
                     category.map(c => <Category key={c.id} category={c}></Category>)
                 }
