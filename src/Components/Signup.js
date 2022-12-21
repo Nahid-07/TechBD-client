@@ -43,7 +43,9 @@ const Signup = () => {
   }
   
   const handleGoogle = ()=>{
-    googleLogIn(provider).then(()=>{}).catch(err=>{
+    googleLogIn(provider).then(()=>{
+      navigate('/course')
+    }).catch(err=>{
       console.log(err.messege);
     })
   }
